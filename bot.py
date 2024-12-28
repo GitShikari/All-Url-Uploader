@@ -2,7 +2,7 @@ import os
 import logging
 from pyrogram.raw.all import layer
 from pyrogram import Client, idle, __version__
-
+from keep_alive import keep_alive
 from config import Config
 
 logging.basicConfig(
@@ -37,7 +37,9 @@ bot = Client(
     plugins=dict(root="plugins"),
 )
 
+
 bot.start()
+keep_alive()
 logger.info("Bot has started.")
 logger.info("**Bot Started**\n\n**Pyrogram Version:** %s \n**Layer:** %s", __version__, layer)
 logger.info("Developed by github.com/kalanakt Sponsored by www.netronk.com")
